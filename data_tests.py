@@ -18,9 +18,35 @@ class TestCases(unittest.TestCase):
         self.assertEqual(45, time.second)
 
 
-    #### Add tests for Time.__eq__
+    #### Add tests for Time._q_e__
+    def test_time_eq(self):
+        input = data.Time(12, 5, 6)
+        input2 = data.Time(6, 5, 2)
+        result = (input == input2)
+        expected = False
+        self.assertEqual(expected, result)
+
+    def test_time_eq_2(self):
+        input = data.Time(3, 8, 4)
+        input2 = data.Time(3, 8, 4)
+        result = (input == input2)
+        expected = True
+        self.assertEqual(expected, result)
 
     #### Add tests for Time.__repr__
+    def test_time_repr(self):
+        input = data.Time(5,1,3)
+        result = input.__repr__()
+        expected = "Time({}, {}, {})".format(5, 1, 3)
+        self.assertEqual(expected, result)
+
+    def test_time_repr_1(self):
+        input = data.Time(10,3,5)
+        result = input.__repr__()
+        expected = "Time({}, {}, {})".format(10, 3, 5)
+        self.assertEqual(expected, result)
+
+
 
 
 
